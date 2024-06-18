@@ -11,10 +11,8 @@ COPY . .
 RUN npm install
 
 # Elimina node_modules y package-lock.json existentes
-RUN rm -rf node_modules package-lock.json
+# RUN rm -rf node_modules package-lock.json
 
-# Instala las dependencias
-RUN npm run dev
 
 # Comando para ejecutar la aplicación Node.js
-# CMD ["node", "index.js"]  
+CMD ["npm", "run", "dev"]
