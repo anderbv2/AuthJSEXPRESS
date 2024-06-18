@@ -17,4 +17,4 @@ RUN rm -rf node_modules package-lock.json
 RUN npm run dev
 
 # Comando para ejecutar la aplicación Node.js
-CMD ["node", "index.js"]
+# CMD ["node", "index.js"]  
