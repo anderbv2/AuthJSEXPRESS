@@ -3,3 +3,7 @@ steps:
   args: ['build', '-t', 'gcr.io/winter-brand-426415-r7/github.com/anderbv2/authjsexpress:$SHORT_SHA', '.']
 - name: 'gcr.io/cloud-builders/docker'
   args: ['push', 'gcr.io/winter-brand-426415-r7/github.com/anderbv2/authjsexpress:$SHORT_SHA']
+- name: 'gcr.io/cloud-builders/gcloud'
+  args: ['run', 'deploy', 'authjsexpress', '--region=us-central1', '--platform=managed', '--image=gcr.io/winter-brand-426415-r7/github.com/anderbv2/authjsexpress:$SHORT_SHA']
+
+  # gcloud run deploy authjsexpress --region=us-central1 --platform=managed --image=gcr.io/winter-brand-426415-r7/github.com/anderbv2/authjsexpress:698ad15
