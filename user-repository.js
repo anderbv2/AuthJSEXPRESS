@@ -15,7 +15,7 @@ export class UserRepository {
     static async create ({ username, password }) {
         // 1. validaciones de username (opcional: zod)
         Validation.username(username);
-        Validation.password(username);
+        Validation.password(password);
 
         // 2 . Asegurarse que el username no existe
         const user = User.findOne({ username })
